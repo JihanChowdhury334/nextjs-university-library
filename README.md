@@ -12,13 +12,13 @@ A full-stack ## Features
 - **Modern UI** - Responsive design with gradient styling and smooth animations
 - **Security** - Bcrypt password hashing and JWT session managementing application built with Next.js 15, TypeScript, and PostgreSQL. Features user authentication, issue management, and real-time search functionality.
 
-**Live Demo**: [Deployed on Vercel](https://your-app-url.vercel.app)
+**Live Demo**: [Deployed on Vercel](issue-tracker-nextjs-three.vercel.app/)
 
 ## ScreenshotsaS Issue Tracker
 
 A modern, full-stack SaaS-style issue tracking application built with cutting-edge technologies. Features authentication, real-time data management, and optimized performance through strategic caching.
 
-**🌐 Live Demo**: [Deployed on Vercel](https://your-app-url.vercel.app)
+**🌐 Live Demo**: [Deployed on Vercel](issue-tracker-nextjs-three.vercel.app/)
 
 ## � Screenshots
 

@@ -1,4 +1,5 @@
 import { createIssue } from "./actions";
+import Link from "next/link";
 
 export default function NewIssuePage() {
   return (
@@ -50,12 +51,12 @@ export default function NewIssuePage() {
             Create Issue
           </button>
           
-          <a
+          <Link
             href="/issues"
             className="bg-gray-300 px-4 py-2 rounded"
           >
             Cancel
-          </a>
+          </Link>
         </div>
       </form>
     </div>

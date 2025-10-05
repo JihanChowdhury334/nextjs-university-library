@@ -4,7 +4,25 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 
 **🌐 Live Demo**: [Deployed on Vercel](https://your-app-url.vercel.app)
 
-## 🚀 Key Features
+## � Screenshots
+
+### Issue Dashboard
+![Issue Dashboard](screenshots/dashboard.PNG)
+*Modern issue management dashboard with gradient design and real-time statistics*
+
+### Individual Issue & Comments  
+![Issue Details](screenshots/issue-details.PNG)
+*Detailed issue view with collaborative comment system and user interactions*
+
+### Search Functionality
+![Search Feature](screenshots/search.PNG)  
+*Real-time search with debounced filtering and intelligent results*
+
+### Authentication
+![Sign In](screenshots/signin.PNG)
+*Secure authentication interface with modern gradient styling*
+
+## �🚀 Key Features
 
 - **🔐 Secure Authentication** - Complete user registration and login system with NextAuth.js
 - **📊 Issue Management Dashboard** - Create, view, and manage issues with intuitive CRUD operations  

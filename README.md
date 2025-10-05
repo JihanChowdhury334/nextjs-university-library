@@ -1,4 +1,20 @@
-# 🎯 SaaS Issue Tracker
+# Issue Tracker
+
+A full-stack ## Features
+
+- **Authentication System** - User registration and login with NextAuth.js and secure password hashing
+- **Issue Management** - Create, view, and manage issues with full CRUD operations  
+- **Comments System** - Discussion threads on individual issues with user attribution
+- **Search Functionality** - Real-time issue search with debouncing for better performance
+- **Type-Safe Database** - Drizzle ORM with PostgreSQL for reliable data operations
+- **Performance Optimization** - Strategic caching for improved load times
+- **Protected Routes** - Authentication-required pages with session management
+- **Modern UI** - Responsive design with gradient styling and smooth animations
+- **Security** - Bcrypt password hashing and JWT session managementing application built with Next.js 15, TypeScript, and PostgreSQL. Features user authentication, issue management, and real-time search functionality.
+
+**Live Demo**: [Deployed on Vercel](https://your-app-url.vercel.app)
+
+## ScreenshotsaS Issue Tracker
 
 A modern, full-stack SaaS-style issue tracking application built with cutting-edge technologies. Features authentication, real-time data management, and optimized performance through strategic caching.
 
@@ -34,7 +50,7 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 - **📱 Modern UI/UX** - Beautiful, responsive design with gradient styling and animations
 - **🔒 Secure Data Handling** - Bcrypt password hashing and JWT session tokens
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 15 with App Router & React Server Components
 - **Language**: TypeScript for type-safe development
@@ -45,7 +61,7 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 - **Server Logic**: Next.js Server Actions for form handling
 - **Deployment**: Vercel with persistent Neon Postgres storage
 
-## 📦 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -82,7 +98,7 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 
 Visit `http://localhost:3000` to see the application running.
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -104,7 +120,7 @@ src/
     └── schema.ts                  # Database schema definitions
 ```
 
-## 🔑 Key Features Explained
+## Architecture
 
 ### Authentication System
 - Secure user registration and login
@@ -122,7 +138,7 @@ src/
 - **Client Components**: Interactive elements with proper state management
 - **Server Actions**: Form handling with server-side processing
 
-## 🚦 Available Scripts
+## Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
@@ -131,7 +147,7 @@ src/
 - `npm run db:migrate` - Run database migrations
 - `npm run db:studio` - Open Drizzle Studio for database management
 
-## 📋 Usage
+## Usage
 
 1. **Sign Up**: Create a new account with email and password
 2. **Sign In**: Log in to access the issue tracker
@@ -139,7 +155,7 @@ src/
 4. **Create Issues**: Add new issues with title, description, and status
 5. **Navigation**: Use the top navigation bar to move between pages
 
-## 🔮 Roadmap
+## Future Enhancements
 
 - [ ] Individual issue detail pages with edit/delete functionality
 - [ ] Advanced filtering and search capabilities
@@ -148,7 +164,7 @@ src/
 - [ ] Enhanced UI components and animations
 - [ ] Mobile-responsive improvements
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature-name`
@@ -156,10 +172,10 @@ src/
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ using Next.js 15 and modern web technologies.
+Built with Next.js 15 and modern web technologies.

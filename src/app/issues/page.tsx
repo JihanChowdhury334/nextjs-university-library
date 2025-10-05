@@ -2,6 +2,9 @@ import { db } from "@/db";
 import { issues } from "@/db/schema";
 import Link from "next/link";
 
+// Cache this page for 60 seconds for better performance
+export const revalidate = 60;
+
 export default async function IssuesPage() {
   const allIssues = await db.select().from(issues);
 

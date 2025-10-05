@@ -1,20 +1,8 @@
 # Issue Tracker
 
-A full-stack ## Features
-
-- **Authentication System** - User registration and login with NextAuth.js and secure password hashing
-- **Issue Management** - Create, view, and manage issues with full CRUD operations  
-- **Comments System** - Discussion threads on individual issues with user attribution
-- **Search Functionality** - Real-time issue search with debouncing for better performance
-- **Type-Safe Database** - Drizzle ORM with PostgreSQL for reliable data operations
-- **Performance Optimization** - Strategic caching for improved load times
-- **Protected Routes** - Authentication-required pages with session management
-- **Modern UI** - Responsive design with gradient styling and smooth animations
-- **Security** - Bcrypt password hashing and JWT session managementing application built with Next.js 15, TypeScript, and PostgreSQL. Features user authentication, issue management, and real-time search functionality.
+A modern, full-stack issue tracking application built with Next.js 15, TypeScript, and PostgreSQL. Features user authentication, issue management, and real-time search functionality.
 
 **Live Demo**: [Deployed on Vercel](https://your-app-url.vercel.app)
-
-## ScreenshotsaS Issue Tracker
 
 A modern, full-stack SaaS-style issue tracking application built with cutting-edge technologies. Features authentication, real-time data management, and optimized performance through strategic caching.
 
@@ -31,7 +19,7 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 *Detailed issue view with collaborative comment system and user interactions*
 
 ### Search Functionality
-![Search Feature](screenshots/search.PNG)  
+![Search Feature](screenshots/search.png)  
 *Real-time search with debounced filtering and intelligent results*
 
 ### Authentication

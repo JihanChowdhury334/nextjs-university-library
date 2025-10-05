@@ -62,7 +62,7 @@ export default function NewIssuePage() {
                 <select
                   id="status"
                   name="status"
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg bg-white"
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg bg-white text-gray-800"
                 >
                   <option value="open">🟢 Open - Needs attention</option>
                   <option value="closed">⚫ Closed - Resolved</option>

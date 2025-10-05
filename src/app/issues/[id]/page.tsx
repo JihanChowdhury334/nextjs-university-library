@@ -14,8 +14,10 @@ interface IssuePageProps {
   };
 }
 
-export default async function IssuePage({ params }: IssuePageProps) {
-  const issueId = parseInt(params.id);
+export default async function IssuePage({ 
+  params: { id }, 
+}: IssuePageProps) {
+  const issueId = parseInt(id);
   
   // Get the issue
   const issue = await db

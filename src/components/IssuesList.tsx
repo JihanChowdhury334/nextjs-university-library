@@ -141,15 +141,12 @@ export default function IssuesList({ issues }: IssuesListProps) {
                 </div>
                 
                 <div className="flex flex-col gap-2 lg:ml-6">
-                  <Link 
+                  <Link
                     href={`/issues/${issue.id}`}
                     className="bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-indigo-100 transition-colors duration-200 text-center"
                   >
                     View Details
                   </Link>
-                  <button className="text-gray-600 hover:text-gray-800 px-4 py-2 rounded-lg transition-colors duration-200">
-                    Edit
-                  </button>
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ A full-stack ## Features
 
 **Live Demo**: [Deployed on Vercel](https://issue-tracker-nextjs-three.vercel.app/)
 
-## ScreenshotsaS Issue Tracker
+## SaaS Issue Tracker
 
 A modern, full-stack SaaS-style issue tracking application built with cutting-edge technologies. Features authentication, real-time data management, and optimized performance through strategic caching.
 

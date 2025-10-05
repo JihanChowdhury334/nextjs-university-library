@@ -8,7 +8,9 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 
 - **🔐 Secure Authentication** - Complete user registration and login system with NextAuth.js
 - **📊 Issue Management Dashboard** - Create, view, and manage issues with intuitive CRUD operations  
-- **🗃️ Type-Safe Database** - Drizzle ORM for fully typed database operations and migrations
+- **� Comments System** - Full discussion threads on individual issues with user attribution
+- **🔍 Smart Search** - Real-time issue search with debouncing and intelligent filtering
+- **�🗃️ Type-Safe Database** - Drizzle ORM for fully typed database operations and migrations
 - **⚡ Performance Optimized** - Strategic caching implementation for lightning-fast load times
 - **🛡️ Protected Routes** - Authentication-required pages with session management
 - **📱 Modern UI/UX** - Beautiful, responsive design with gradient styling and animations

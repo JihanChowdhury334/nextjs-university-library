@@ -16,3 +16,11 @@ export const issues = pgTable("issues", {
   createdAt: timestamp("created_at").defaultNow(),
   userId: integer("user_id").references(() => users.id),
 });
+
+export const comments = pgTable("comments", {
+  id: serial("id").primaryKey(),
+  content: text("content").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+  issueId: integer("issue_id").references(() => issues.id).notNull(),
+  userId: integer("user_id").references(() => users.id).notNull(),
+});

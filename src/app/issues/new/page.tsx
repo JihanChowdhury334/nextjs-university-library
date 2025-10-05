@@ -30,7 +30,7 @@ export default function NewIssuePage() {
                   id="title"
                   name="title"
                   required
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg placeholder-gray-400"
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg placeholder-gray-400 text-black"
                   placeholder="Enter a clear, descriptive title..."
                 />
                 <p className="text-sm text-gray-500">Be specific and concise about the issue</p>
@@ -47,7 +47,7 @@ export default function NewIssuePage() {
                   name="description"
                   required
                   rows={6}
-                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg placeholder-gray-400 resize-none"
+                  className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-200 text-lg placeholder-gray-400 resize-none text-black"
                   placeholder="Provide detailed information about the issue..."
                 />
                 <p className="text-sm text-gray-500">Include steps to reproduce, expected behavior, and any relevant context</p>

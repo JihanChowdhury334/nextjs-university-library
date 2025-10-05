@@ -31,7 +31,7 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
 *Detailed issue view with collaborative comment system and user interactions*
 
 ### Search Functionality
-![Search Feature](screenshots/search.PNG)  
+![Search Feature](screenshots/search.png)  
 *Real-time search with debounced filtering and intelligent results*
 
 ### Authentication

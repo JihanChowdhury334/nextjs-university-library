@@ -1,61 +1,73 @@
-# Issue Tracker
+# 📚 University Library Management System
 
-A modern, full-stack issue tracking application built with Next.js 15, TypeScript, and PostgreSQL. Features user authentication, issue management, and real-time search functionality.
+A modern, full-stack library management platform built with Next.js 15, featuring a premium dark theme, real-time book borrowing, and comprehensive admin controls.
 
-**Live Demo**: [Deployed on Vercel](https://issue-tracker-nextjs-three.vercel.app/)
+![Library System](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+## ✨ Features
 
-A modern, full-stack SaaS-style issue tracking application built with cutting-edge technologies. Features authentication, real-time data management, and optimized performance through strategic caching.
+### 🎨 **Premium Design**
+- **Dark Theme** with glassmorphism effects
+- **Responsive Design** - Works on all devices
+- **Modern UI/UX** with smooth animations
+- **Lucide React Icons** for professional look
 
-**🌐 Live Demo**: [Deployed on Vercel](https://issue-tracker-nextjs-three.vercel.app/)
+### 📖 **Core Library Functions**
+- **Browse & Search** books with advanced filtering
+- **Real-time Borrowing** system with database updates
+- **Return Management** with due date tracking
+- **Book Details** pages with comprehensive information
+- **Availability Tracking** - Live copy count updates
 
-## � Screenshots
+### 👥 **User Management**
+- **Role-based Access** - Students vs Admins
+- **User Authentication** with NextAuth.js
+- **Personal Dashboard** - "My Books" portal
+- **Borrowing History** with status tracking
 
-### Issue Dashboard
-![Issue Dashboard](screenshots/dashboard.PNG)
-*Modern issue management dashboard with gradient design and real-time statistics*
+### 🔧 **Admin Features**
+- **Add/Manage Books** with full metadata
+- **User Management** capabilities
+- **Library Statistics** dashboard
+- **Book Categories** management
+- **PDF Receipt Generation** for borrowings
 
-### Individual Issue & Comments  
-![Issue Details](screenshots/issue-details.PNG)
-*Detailed issue view with collaborative comment system and user interactions*
+### 🗄️ **Database & Backend**
+- **PostgreSQL** with Drizzle ORM
+- **Type-safe** database operations
+- **Migration System** for schema changes
+- **RESTful API** endpoints
+- **Error Handling** and validation
 
-### Search Functionality
-![Search Feature](screenshots/search.png)  
-*Real-time search with debounced filtering and intelligent results*
+## 🛠️ Tech Stack
 
-### Authentication
-![Sign In](screenshots/signin.PNG)
-*Secure authentication interface with modern gradient styling*
+| Technology | Purpose |
+|------------|---------|
+| **Next.js 15** | React framework with App Router |
+| **TypeScript** | Type-safe development |
+| **PostgreSQL** | Primary database |
+| **Drizzle ORM** | Type-safe database operations |
+| **NextAuth.js** | Authentication & session management |
+| **Tailwind CSS** | Utility-first styling |
+| **Lucide React** | Icon library |
+| **@react-pdf/renderer** | PDF generation |
 
-## �🚀 Key Features
+## 🚀 Quick Start
 
-- **🔐 Secure Authentication** - Complete user registration and login system with NextAuth.js
-- **📊 Issue Management Dashboard** - Create, view, and manage issues with intuitive CRUD operations  
-- **� Comments System** - Full discussion threads on individual issues with user attribution
-- **🔍 Smart Search** - Real-time issue search with debouncing and intelligent filtering
-- **�🗃️ Type-Safe Database** - Drizzle ORM for fully typed database operations and migrations
-- **⚡ Performance Optimized** - Strategic caching implementation for lightning-fast load times
-- **🛡️ Protected Routes** - Authentication-required pages with session management
-- **📱 Modern UI/UX** - Beautiful, responsive design with gradient styling and animations
-- **🔒 Secure Data Handling** - Bcrypt password hashing and JWT session tokens
+### Prerequisites
+- Node.js 18+ 
+- PostgreSQL database
+- npm or yarn
 
-## Tech Stack
-
-- **Framework**: Next.js 15 with App Router & React Server Components
-- **Language**: TypeScript for type-safe development
-- **Authentication**: NextAuth.js v4 with JWT sessions
-- **Database**: Neon PostgreSQL with Drizzle ORM
-- **Styling**: Tailwind CSS with gradient design system
-- **Performance**: Strategic caching with revalidation
-- **Server Logic**: Next.js Server Actions for form handling
-- **Deployment**: Vercel with persistent Neon Postgres storage
-
-## Installation
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JihanChowdhury334/issue-tracker-nextjs.git
-   cd issue-tracker-nextjs
+   git clone https://github.com/JihanChowdhury334/nextjs-university-library.git
+   cd nextjs-university-library
    ```
 
 2. **Install dependencies**
@@ -64,14 +76,15 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
    ```
 
 3. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Add your environment variables:
    ```env
-   # Database
-   DATABASE_URL="your-postgresql-connection-string"
-
-   # NextAuth
+   DATABASE_URL="your_postgresql_connection_string"
    NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="your-secret-key"
+   NEXTAUTH_SECRET="your_secret_key"
    ```
 
 4. **Set up the database**
@@ -85,86 +98,124 @@ A modern, full-stack SaaS-style issue tracking application built with cutting-ed
    npm run dev
    ```
 
-Visit `http://localhost:3000` to see the application running.
+6. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Project Structure
+## 📱 Features Preview
+
+- **Modern Dark Theme** with glassmorphism effects
+- **Responsive Design** that works on all devices
+- **Real-time Book Borrowing** with instant updates
+- **Advanced Search & Filtering** capabilities
+- **Admin Dashboard** for library management
+- **User Portal** for personal book tracking
+
+## 🗂️ Project Structure
 
 ```
 src/
-├── app/
-│   ├── api/
-│   │   ├── auth/[...nextauth]/    # NextAuth configuration
-│   │   └── signup/                # User registration endpoint
-│   ├── issues/
-│   │   ├── new/                   # Create new issue page
-│   │   └── page.tsx               # Issues dashboard
-│   ├── signin/                    # Sign in page
-│   ├── signup/                    # Sign up page
-│   └── layout.tsx                 # Root layout with navigation
-├── components/
-│   ├── Navbar.tsx                 # Navigation component
-│   └── Providers.tsx              # Client-side providers wrapper
-└── db/
-    ├── index.ts                   # Database connection
-    └── schema.ts                  # Database schema definitions
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   │   ├── auth/          # Authentication
+│   │   ├── books/         # Book management
+│   │   ├── borrow/        # Borrowing system
+│   │   └── return/        # Return system
+│   ├── books/             # Book pages
+│   ├── admin/             # Admin dashboard
+│   └── my-books/          # User portal
+├── components/            # Reusable components
+├── db/                   # Database schema & config
+└── lib/                  # Utility functions
 ```
 
-## Architecture
+## 🔑 Key Features Explained
 
-### Authentication System
-- Secure user registration and login
-- Password hashing with bcrypt
-- JWT-based sessions with NextAuth.js
-- Protected routes and authentication state management
+### Real-time Book Borrowing
+- **Instant Updates**: Available copies update immediately
+- **Duplicate Prevention**: Users can't borrow the same book twice
+- **Due Date Management**: 14-day borrowing period with tracking
+- **Status Tracking**: Borrowed, returned, overdue states
 
-### Database Schema
-- **Users Table**: Stores user accounts and credentials
-- **Issues Table**: Manages issue data with foreign key relationships
-- **Type-safe Operations**: Drizzle ORM ensures compile-time type checking
+### Advanced Search & Filtering
+- **Debounced Search**: Optimized performance with search delays
+- **Category Filtering**: Filter by book categories
+- **Real-time Results**: Instant search results as you type
+- **Responsive Design**: Works perfectly on mobile
 
-### Modern React Patterns
-- **Server Components**: Database queries and initial rendering on the server
-- **Client Components**: Interactive elements with proper state management
-- **Server Actions**: Form handling with server-side processing
+### Admin Management
+- **Book CRUD**: Create, read, update, delete books
+- **User Management**: View and manage user accounts
+- **Library Statistics**: Real-time metrics and analytics
+- **Category Management**: Organize books by categories
 
-## Scripts
+## 🎯 Usage
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run db:generate` - Generate database migrations
-- `npm run db:migrate` - Run database migrations
-- `npm run db:studio` - Open Drizzle Studio for database management
+### For Students
+1. **Sign up/Login** to your account
+2. **Browse the collection** using search and filters
+3. **Click on books** to view detailed information
+4. **Borrow books** with the "Borrow" button
+5. **Check "My Books"** to see borrowed items
+6. **Return books** when finished
 
-## Usage
+### For Admins
+1. **Login** with admin credentials
+2. **Add new books** via the "Add Book" page
+3. **Manage the collection** through the admin dashboard
+4. **Monitor library statistics** and user activity
+5. **Handle book returns** and overdue management
 
-1. **Sign Up**: Create a new account with email and password
-2. **Sign In**: Log in to access the issue tracker
-3. **View Issues**: Browse all issues on the dashboard
-4. **Create Issues**: Add new issues with title, description, and status
-5. **Navigation**: Use the top navigation bar to move between pages
+## 🔧 API Endpoints
 
-## Future Enhancements
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/books` | GET, POST | List and create books |
+| `/api/books/[id]` | GET | Get specific book details |
+| `/api/borrow` | POST | Borrow a book |
+| `/api/return` | POST | Return a book |
+| `/api/my-books` | GET | Get user's borrowed books |
+| `/api/categories` | GET | Get book categories |
 
-- [ ] Individual issue detail pages with edit/delete functionality
-- [ ] Advanced filtering and search capabilities
-- [ ] Issue assignment and priority levels
-- [ ] Real-time updates and notifications
-- [ ] Enhanced UI components and animations
-- [ ] Mobile-responsive improvements
+## 🚀 Deployment
 
-## Contributing
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
+
+### Other Platforms
+- **Netlify**: Compatible with Next.js
+- **Railway**: Great for full-stack apps
+- **DigitalOcean**: VPS deployment option
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes and commit: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Jihan Chowdhury**
+- GitHub: [@JihanChowdhury334](https://github.com/JihanChowdhury334)
+- Project: [University Library Management System](https://github.com/JihanChowdhury334/nextjs-university-library)
+
+## 🙏 Acknowledgments
+
+- **Next.js Team** for the amazing framework
+- **Vercel** for deployment platform
+- **Tailwind CSS** for the utility-first CSS framework
+- **Drizzle ORM** for type-safe database operations
+- **Lucide** for the beautiful icon set
 
 ---
 
-Built with Next.js 15 and modern web technologies.
+⭐ **Star this repository if you found it helpful!**
+
+📚 **Built with ❤️ for modern library management**

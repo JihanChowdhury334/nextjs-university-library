@@ -6,9 +6,10 @@ import { users } from "@/db/schema";
 import bcrypt from "bcrypt";
 import { eq } from "drizzle-orm";
 
-const handler = NextAuth({
+export const authOptions = {
   adapter: DrizzleAdapter(db),
   session: { strategy: "jwt" },
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -31,13 +32,35 @@ const handler = NextAuth({
         const valid = await bcrypt.compare(credentials.password, user.password);
         if (!valid) return null;
 
-        return { id: String(user.id), name: user.name, email: user.email };
+        return { 
+          id: String(user.id), 
+          name: user.name, 
+          email: user.email,
+          role: user.role 
+        };
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.id = token.sub;
+        session.user.role = token.role;
+      }
+      return session;
+    },
+  },
   pages: {
     signIn: "/signin",
   },
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

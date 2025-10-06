@@ -2,33 +2,63 @@
 
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
+import { BookOpen, User, LogOut, Plus, Settings, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Navbar() {
   const { data: session } = useSession();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/20 sticky top-0 z-50">
-      <div className="container mx-auto px-8 py-4">
+    <nav className="bg-black/20 backdrop-blur-xl shadow-2xl border-b border-white/10 sticky top-0 z-50">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo & Navigation */}
-          <div className="flex items-center space-x-8">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-200">
-              IssueTracker
+          <div className="flex items-center space-x-12">
+            <Link 
+              href="/" 
+              className="text-3xl font-black bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
+            >
+              Digital Library
             </Link>
             
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-8">
               <Link 
-                href="/issues" 
-                className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200 hover:scale-105 transform"
+                href="/books" 
+                className="group text-white/80 hover:text-white font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
               >
-                Issues
+                <BookOpen className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                Collection
               </Link>
-              <Link 
-                href="/issues/new" 
-                className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200 hover:scale-105 transform"
-              >
-                New Issue
-              </Link>
+              
+              {session && (
+                <Link 
+                  href="/my-books" 
+                  className="group text-white/80 hover:text-white font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                >
+                  <User className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                  My Books
+                </Link>
+              )}
+              
+              {session?.user?.role === 'admin' && (
+                <>
+                  <Link 
+                    href="/books/new" 
+                    className="group text-white/80 hover:text-white font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  >
+                    <Plus className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                    Add Book
+                  </Link>
+                  <Link 
+                    href="/admin" 
+                    className="group text-white/80 hover:text-white font-semibold transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                  >
+                    <Settings className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
+                    Admin
+                  </Link>
+                </>
+              )}
             </div>
           </div>
           
@@ -36,18 +66,19 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             {session ? (
               <>
-                <div className="hidden sm:flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                <div className="hidden sm:flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold shadow-lg">
                     {session.user?.email?.charAt(0).toUpperCase()}
                   </div>
-                  <span className="text-gray-700 font-medium">
+                  <div className="text-white/90 font-medium">
                     {session.user?.email?.split('@')[0]}
-                  </span>
+                  </div>
                 </div>
                 <button 
                   onClick={() => signOut()}
-                  className="bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="group bg-white/10 hover:bg-red-500/20 text-white px-6 py-3 rounded-xl font-semibold border border-white/20 hover:border-red-500/50 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                 >
+                  <LogOut className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
                   Sign Out
                 </button>
               </>
@@ -55,20 +86,76 @@ export default function Navbar() {
               <>
                 <Link 
                   href="/signin" 
-                  className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200"
+                  className="text-white/80 hover:text-white font-semibold transition-colors duration-300 hover:scale-105"
                 >
                   Sign In
                 </Link>
                 <Link 
                   href="/signup" 
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl font-bold shadow-2xl hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-300"
                 >
-                  Sign Up
+                  Get Started
                 </Link>
               </>
             )}
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors duration-200"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
+        
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mt-4 bg-white/5 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
+            <div className="flex flex-col space-y-4">
+              <Link 
+                href="/books" 
+                className="text-white/80 hover:text-white font-semibold transition-colors duration-300 flex items-center gap-3"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <BookOpen className="w-5 h-5" />
+                Collection
+              </Link>
+              
+              {session && (
+                <Link 
+                  href="/my-books" 
+                  className="text-white/80 hover:text-white font-semibold transition-colors duration-300 flex items-center gap-3"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <User className="w-5 h-5" />
+                  My Books
+                </Link>
+              )}
+              
+              {session?.user?.role === 'admin' && (
+                <>
+                  <Link 
+                    href="/books/new" 
+                    className="text-white/80 hover:text-white font-semibold transition-colors duration-300 flex items-center gap-3"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Plus className="w-5 h-5" />
+                    Add Book
+                  </Link>
+                  <Link 
+                    href="/admin" 
+                    className="text-white/80 hover:text-white font-semibold transition-colors duration-300 flex items-center gap-3"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Settings className="w-5 h-5" />
+                    Admin
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

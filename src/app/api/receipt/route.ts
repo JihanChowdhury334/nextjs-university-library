@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { renderToStream } from "@react-pdf/renderer";
-import { BorrowingReceipt } from "@/lib/pdf-generator";
 import { db } from "@/db";
 import { borrowings, books, users } from "@/db/schema";
 import { eq } from "drizzle-orm";
@@ -42,32 +40,17 @@ export async function GET(request: NextRequest) {
 
     const borrowing = borrowingData[0];
 
-    // Generate PDF
-    const stream = await renderToStream(
-      <BorrowingReceipt borrowing={borrowing} />
-    );
-
-    const chunks: Uint8Array[] = [];
-    const reader = stream.getReader();
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      chunks.push(value);
-    }
-
-    const pdfBuffer = Buffer.concat(chunks);
-
-    return new NextResponse(pdfBuffer, {
-      headers: {
-        'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="borrowing-receipt-${borrowing.id}.pdf"`,
-      },
+    // Return borrowing details as JSON (PDF generation can be added later)
+    return NextResponse.json({
+      message: "Borrowing receipt data",
+      borrowing: borrowing,
+      note: "PDF generation feature coming soon!"
     });
+
   } catch (error) {
-    console.error("Error generating PDF:", error);
+    console.error("Error fetching borrowing details:", error);
     return NextResponse.json(
-      { error: "Failed to generate PDF" },
+      { error: "Failed to fetch borrowing details" },
       { status: 500 }
     );
   }

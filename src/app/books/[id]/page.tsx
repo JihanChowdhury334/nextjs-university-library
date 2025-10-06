@@ -15,8 +15,8 @@ interface BookPageProps {
 }
 
 export default function BookPage({ params }: BookPageProps) {
-  const [bookData, setBookData] = useState<any>(null);
-  const [category, setCategory] = useState<any>(null);
+  const [bookData, setBookData] = useState<{id: number, title: string, author: string, availableCopies: number | null} | null>(null);
+  const [category, setCategory] = useState<{name: string} | null>(null);
   const [loading, setLoading] = useState(true);
 
   const bookId = parseInt(params.id);

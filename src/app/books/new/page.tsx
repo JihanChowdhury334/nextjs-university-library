@@ -8,7 +8,7 @@ import { categories } from "@/db/schema";
 
 export default function NewBookPage() {
   const router = useRouter();
-  const [categories, setCategories] = useState<any[]>([]);
+  const [categories, setCategories] = useState<Array<{id: number, name: string}>>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: "",

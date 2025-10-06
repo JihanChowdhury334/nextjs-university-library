@@ -1,5 +1,6 @@
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { db } from "@/db";
 import { borrowings, books, users } from "@/db/schema";
 import { eq } from "drizzle-orm";
@@ -100,12 +101,12 @@ export default async function Dashboard() {
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3">No books borrowed</h3>
               <p className="text-gray-600 mb-6">Start exploring our library collection!</p>
-              <a 
+              <Link 
                 href="/books"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 Browse Books
-              </a>
+              </Link>
             </div>
           ) : (
             <div className="grid gap-4">
